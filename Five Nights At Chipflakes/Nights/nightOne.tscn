@@ -1,0 +1,604 @@
+[gd_scene load_steps=51 format=3 uid="uid://b3rnw6kqd8xlm"]
+
+[ext_resource type="Script" path="res://Nights/nightOne.gd" id="1_87yvh"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="1_wmxpt"]
+[ext_resource type="Texture2D" uid="uid://d0s0pcmj8nodg" path="res://Assets/Sprites/office.png" id="3_x37ge"]
+[ext_resource type="Texture2D" uid="uid://dt8xhvi03bumg" path="res://Assets/Sprites/cameraButton.png" id="4_t65ik"]
+[ext_resource type="Texture2D" uid="uid://dru55nshs14lv" path="res://Assets/Sprites/cameraLayoutBackground.png" id="5_tei4l"]
+[ext_resource type="VideoStream" path="res://Assets/Animations/static.ogv" id="5_wc2ru"]
+[ext_resource type="Texture2D" uid="uid://bk17sj64n618e" path="res://Assets/Sprites/Cameras/stage/stageRegular.png" id="5_wm11j"]
+[ext_resource type="Texture2D" uid="uid://bc6x51jfxd4ix" path="res://Assets/Sprites/border.png" id="6_106nr"]
+[ext_resource type="Texture2D" uid="uid://e8xoepeynfp4" path="res://Assets/Sprites/cam0L.png" id="6_sq2ar"]
+[ext_resource type="Script" path="res://Nights/cameraButtonsNightOne.gd" id="6_yeb58"]
+[ext_resource type="Texture2D" uid="uid://bx7bhtm1fo88c" path="res://Assets/Sprites/cam1AL.png" id="7_6n32v"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="7_qhp1q"]
+[ext_resource type="Texture2D" uid="uid://srd4jdp6v2po" path="res://Assets/Sprites/cam2L.png" id="9_yurpy"]
+[ext_resource type="Texture2D" uid="uid://bisqw006l80y7" path="res://Assets/Sprites/cam3L.png" id="10_p5u8y"]
+[ext_resource type="Texture2D" uid="uid://wm7sjem2d5dm" path="res://Assets/Sprites/cam1BL.png" id="10_ruaym"]
+[ext_resource type="Texture2D" uid="uid://bpag6roqbog1" path="res://Assets/Sprites/cam4L.png" id="11_dva60"]
+[ext_resource type="Texture2D" uid="uid://b5kyqcbulvkfj" path="res://Assets/Sprites/cam5AL.png" id="12_s6qvf"]
+[ext_resource type="Texture2D" uid="uid://cvnbe2t1if6ej" path="res://Assets/Sprites/cam6AL.png" id="13_va7l7"]
+[ext_resource type="Texture2D" uid="uid://bmqwgnwv8n2ch" path="res://Assets/Sprites/cam5BL.png" id="14_bclk7"]
+[ext_resource type="Texture2D" uid="uid://bkk5e863rpkri" path="res://Assets/Sprites/cam6BL.png" id="15_fwst7"]
+[ext_resource type="AudioStream" uid="uid://cstxcf8h7kias" path="res://Assets/Sound/SFX/nightOneCall.ogg.mp3" id="20_2fptl"]
+[ext_resource type="AudioStream" uid="uid://585rj8vfmx11" path="res://Assets/Sound/SFX/cerealEatenNormal.mp3" id="21_3j7fo"]
+[ext_resource type="Texture2D" uid="uid://twce6fsa5rps" path="res://Assets/Sprites/jumpscareChip.png" id="21_uviu4"]
+[ext_resource type="AudioStream" uid="uid://ddydjmbx4vkbw" path="res://Assets/Sound/SFX/milkCrime.mp3" id="22_b4lgk"]
+[ext_resource type="AudioStream" uid="uid://kbpbdrr6mcdk" path="res://Assets/Sound/SFX/cerealEatenSoggy.mp3" id="22_bu7sx"]
+[ext_resource type="AudioStream" uid="uid://cudyleix5wdhl" path="res://Assets/Sound/SFX/chipflakeDeath.ogg" id="22_d5e0m"]
+[ext_resource type="AudioStream" uid="uid://uqjmghwm2j5p" path="res://Assets/Sound/SFX/skippedCall.ogg" id="24_kve35"]
+[ext_resource type="Texture2D" uid="uid://dd1yvsmfkoqt2" path="res://Assets/Sprites/cerealButton.png" id="25_2kav7"]
+[ext_resource type="Texture2D" uid="uid://dmjtkf6p4dtwb" path="res://Assets/Sprites/cerealStation.png" id="25_8h4eu"]
+[ext_resource type="AudioStream" uid="uid://ctlgc1jndurpr" path="res://Assets/Sound/SFX/yay.mp3" id="26_s3hj7"]
+[ext_resource type="Texture2D" uid="uid://od8kre3wofdo" path="res://Assets/Sprites/milk.png" id="26_xncbi"]
+[ext_resource type="AudioStream" uid="uid://1rt7bl3mwhx5" path="res://Assets/Sound/SFX/cameraFlip.mp3" id="27_dyd71"]
+[ext_resource type="Texture2D" uid="uid://b5itoa4prtrnj" path="res://Assets/Sprites/cereal.png" id="27_pjfwx"]
+[ext_resource type="AudioStream" uid="uid://dcg4xpojyays6" path="res://Assets/Sound/SFX/characterMove.mp3" id="28_oals3"]
+[ext_resource type="Texture2D" uid="uid://bmlas5qq270nq" path="res://Assets/Sprites/bowlCereal.png" id="29_x3o6i"]
+[ext_resource type="Texture2D" uid="uid://cbasnf2i7t11s" path="res://Assets/Sprites/bowlCum.png" id="30_h01h1"]
+[ext_resource type="Texture2D" uid="uid://4nys72oyqqar" path="res://Assets/Sprites/bowlBoth.png" id="31_6xb2g"]
+[ext_resource type="Texture2D" uid="uid://bf83tams53spc" path="res://Assets/Sprites/cerealPour.png" id="31_e82vm"]
+[ext_resource type="Texture2D" uid="uid://xmlx64jibimq" path="res://Assets/Sprites/bowlEmpty.png" id="32_fk3oq"]
+[ext_resource type="Texture2D" uid="uid://dfrn4ckl7h3u8" path="res://Assets/Sprites/milkPour.png" id="32_te1qy"]
+[ext_resource type="Texture2D" uid="uid://r3dh8304n8ae" path="res://Assets/Sprites/clickMe.png" id="32_wjfi5"]
+
+[sub_resource type="GDScript" id="GDScript_b0qbx"]
+script/source = "extends Node2D
+
+var time = 0;
+
+var random;
+
+var level = 0;
+
+func move():
+	pass
+
+func _on_timer_timeout():
+	var mouseX = get_global_mouse_position().x;
+	var mouseY = get_global_mouse_position().y;
+	
+	time += 1;
+
+	var rng = RandomNumberGenerator.new();
+	
+	rng.seed = mouseX/mouseY+time;
+	
+	random = rng.randi_range(0.0, 20.0);
+
+	if random > level || random == level:
+		move();
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wkku"]
+size = Vector2(280, 505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6b41"]
+size = Vector2(408.333, 450)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flew5"]
+size = Vector2(230, 337.52)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cjle"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wuln"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_436a5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt0qx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="GDScript" id="GDScript_tq80c"]
+script/source = "extends Label
+
+func _process(delta):
+	await get_tree().create_timer(1).timeout;
+"
+
+[node name="NightOne" type="Node2D" node_paths=PackedStringArray("darkness", "office", "penis", "border", "timeLabel", "cameraLayout", "cameraView", "cameraButtons", "penisTwo", "chipJumpscareSound", "jumpscareChip", "cameraTextNode", "message", "messageMuted", "muteMessage", "cerealStation", "cerealButton", "cameraButton", "cereal", "milk", "bowlEmpty", "bowlCereal", "bowlCum", "bowlBoth", "cerealPour", "milkPour", "milkCrime", "clickMe", "cerealTimerLabel", "bowlTimer", "cerealTimer2", "soggyCereal", "placeCereal", "cerealEatenNormal", "cerealEatenSoggy", "yay", "winText", "cameraFlip", "characterMove", "cerealAmountLabel")]
+script = ExtResource("1_87yvh")
+darkness = NodePath("fade")
+office = NodePath("office")
+penis = NodePath("static")
+border = NodePath("border")
+timeLabel = NodePath("time")
+cameraLayout = NodePath("cameraLayoutBackground")
+cameraView = NodePath("cameraView")
+cameraButtons = NodePath("cameraButtons")
+penisTwo = NodePath("cameraButtons")
+chipJumpscareSound = NodePath("chipJumpscare")
+jumpscareChip = NodePath("jumpscareChip")
+cameraTextNode = NodePath("cameraText")
+message = NodePath("message")
+messageMuted = NodePath("messageMuted")
+muteMessage = NodePath("muteCall")
+cerealStation = NodePath("cerealStation")
+cerealButton = NodePath("cerealStationButton")
+cameraButton = NodePath("cameraButtonSprite")
+cereal = NodePath("cereal")
+milk = NodePath("milk")
+bowlEmpty = NodePath("bowlEmpty")
+bowlCereal = NodePath("bowlCereal")
+bowlCum = NodePath("bowlCum")
+bowlBoth = NodePath("bowlBoth")
+cerealPour = NodePath("cerealPour")
+milkPour = NodePath("milkPour")
+milkCrime = NodePath("milkCrime")
+clickMe = NodePath("clickMe")
+cerealTimerLabel = NodePath("cerealTimerLabel")
+bowlTimer = NodePath("bowlTimer")
+cerealTimer2 = NodePath("cerealTimer")
+soggyCereal = NodePath("soggyCereal")
+placeCereal = NodePath("placeCereal")
+cerealEatenNormal = NodePath("cerealEatenNormal")
+cerealEatenSoggy = NodePath("cerealEatenSoggy")
+yay = NodePath("yay")
+winText = NodePath("6AM")
+cameraFlip = NodePath("cameraFlip")
+characterMove = NodePath("characterMove")
+cerealAmountLabel = NodePath("cerealAmount")
+
+[node name="office" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_x37ge")
+
+[node name="cameraView" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("5_wm11j")
+
+[node name="border" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("6_106nr")
+
+[node name="cameraLayoutBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1491.53, 570.305)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("5_tei4l")
+
+[node name="cameraText" type="Label" parent="."]
+visible = false
+offset_left = 1335.32
+offset_top = 824.0
+offset_right = 1882.32
+offset_bottom = 896.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 45
+text = "Main Stage"
+horizontal_alignment = 2
+
+[node name="static" type="VideoStreamPlayer" parent="."]
+modulate = Color(1, 1, 1, 0.0392157)
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("5_wc2ru")
+loop = true
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="timer2" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="cerealTimer" type="Timer" parent="."]
+
+[node name="Chip" type="Node2D" parent="."]
+script = SubResource("GDScript_b0qbx")
+
+[node name="message" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_2fptl")
+volume_db = 17.487
+
+[node name="cerealEatenNormal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_3j7fo")
+volume_db = 17.487
+
+[node name="cerealEatenSoggy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_bu7sx")
+volume_db = 17.487
+
+[node name="milkCrime" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_b4lgk")
+volume_db = 17.487
+
+[node name="chipJumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_d5e0m")
+volume_db = 17.487
+
+[node name="messageMuted" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_kve35")
+volume_db = 17.118
+
+[node name="yay" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_s3hj7")
+volume_db = 17.487
+
+[node name="cameraFlip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_dyd71")
+volume_db = 10.0
+
+[node name="characterMove" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_oals3")
+volume_db = 10.0
+
+[node name="cerealStation" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("25_8h4eu")
+
+[node name="cerealStationButton" type="Sprite2D" parent="."]
+position = Vector2(1805, 613.435)
+texture = ExtResource("25_2kav7")
+
+[node name="milk" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1290, 536)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("26_xncbi")
+
+[node name="milkArea" type="Area2D" parent="milk"]
+
+[node name="milkCollision" type="CollisionShape2D" parent="milk/milkArea"]
+position = Vector2(0, -0.833313)
+shape = SubResource("RectangleShape2D_1wkku")
+
+[node name="cereal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1055, 536)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("27_pjfwx")
+
+[node name="cerealArea" type="Area2D" parent="cereal"]
+
+[node name="cerealCollision" type="CollisionShape2D" parent="cereal/cerealArea"]
+position = Vector2(-12.5, 6.66669)
+shape = SubResource("RectangleShape2D_k6b41")
+
+[node name="bowlEmpty" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("32_fk3oq")
+
+[node name="bowlArea" type="Area2D" parent="bowlEmpty"]
+
+[node name="bowlCollision" type="CollisionShape2D" parent="bowlEmpty/bowlArea"]
+position = Vector2(0.505005, -158.76)
+shape = SubResource("RectangleShape2D_flew5")
+
+[node name="bowlCereal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("29_x3o6i")
+
+[node name="bowlCum" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("30_h01h1")
+
+[node name="bowlBoth" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("31_6xb2g")
+
+[node name="clickMe" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(789, 217)
+texture = ExtResource("32_wjfi5")
+
+[node name="cerealPour" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(790, 367)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("31_e82vm")
+
+[node name="milkPour" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(983, 367)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("32_te1qy")
+
+[node name="milkButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1202.0
+offset_top = 392.0
+offset_right = 1358.0
+offset_bottom = 681.0
+
+[node name="cerealButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 928.0
+offset_top = 409.0
+offset_right = 1166.0
+offset_bottom = 677.0
+
+[node name="cerealDoneButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 648.0
+offset_top = 516.0
+offset_right = 947.0
+offset_bottom = 688.0
+
+[node name="muteCall" type="Button" parent="."]
+offset_left = 49.0
+offset_top = 53.0
+offset_right = 611.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_7cjle")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1wuln")
+text = "Mute Call"
+
+[node name="placeCereal" type="Button" parent="."]
+visible = false
+offset_left = 57.515
+offset_top = 253.57
+offset_right = 825.515
+offset_bottom = 401.57
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_436a5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jt0qx")
+text = "Place Cereal"
+
+[node name="time" type="Label" parent="."]
+offset_left = 1517.0
+offset_top = 15.0
+offset_right = 1902.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 80
+text = "12:00 AM"
+script = SubResource("GDScript_tq80c")
+
+[node name="night" type="Label" parent="."]
+offset_left = 1560.0
+offset_top = 126.0
+offset_right = 1900.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 60
+text = "Night One"
+
+[node name="bowlTimer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1190.68, 80.635)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("31_6xb2g")
+
+[node name="cerealTimerLabel" type="Label" parent="."]
+visible = false
+offset_left = 1318.0
+offset_top = 18.0
+offset_right = 1416.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 80
+text = "10"
+
+[node name="soggyCereal" type="Label" parent="."]
+visible = false
+offset_left = 144.045
+offset_top = 396.96
+offset_right = 1881.05
+offset_bottom = 536.96
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 80
+text = "The cereal has turned soggy."
+
+[node name="cameraButtonSprite" type="Sprite2D" parent="."]
+position = Vector2(960, 950)
+texture = ExtResource("4_t65ik")
+
+[node name="cerealAmount" type="Label" parent="."]
+offset_left = 567.0
+offset_top = 806.0
+offset_right = 1369.0
+offset_bottom = 904.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 70
+text = "You have 10 cereal."
+metadata/_edit_use_anchors_ = true
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_wmxpt")
+
+[node name="jumpscareChip" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 538.487)
+texture = ExtResource("21_uviu4")
+
+[node name="6AM" type="Label" parent="."]
+visible = false
+offset_left = 415.0
+offset_top = 362.0
+offset_right = 1505.0
+offset_bottom = 718.0
+theme_override_fonts/font = ExtResource("7_qhp1q")
+theme_override_font_sizes/font_size = 256
+text = "6:00 AM"
+
+[node name="cameraButtons" type="Node2D" parent="." node_paths=PackedStringArray("cameraView", "cameraText", "cam0L", "cam1AL", "cam1BL", "cam2L", "cam3L", "cam4L", "cam5AL", "cam6AL", "cam5BL", "cam6BL", "placeCereal", "penis", "script2")]
+script = ExtResource("6_yeb58")
+cameraView = NodePath("../cameraView")
+cameraText = NodePath("../cameraText")
+cam0L = NodePath("Sprites/cam0L")
+cam1AL = NodePath("Sprites/cam1AL")
+cam1BL = NodePath("Sprites/cam1BL")
+cam2L = NodePath("Sprites/cam2L")
+cam3L = NodePath("Sprites/cam3L")
+cam4L = NodePath("Sprites/cam4L")
+cam5AL = NodePath("Sprites/cam5AL")
+cam6AL = NodePath("Sprites/cam6AL")
+cam5BL = NodePath("Sprites/cam5BL")
+cam6BL = NodePath("Sprites/cam6BL")
+placeCereal = NodePath("../placeCereal")
+penis = NodePath(".")
+script2 = NodePath("..")
+
+[node name="Sprites" type="Node2D" parent="cameraButtons"]
+visible = false
+
+[node name="cam0L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1395.18, 301.93)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("6_sq2ar")
+
+[node name="cam1AL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1397.41, 443.76)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("7_6n32v")
+
+[node name="cam1BL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1348.4, 523.599)
+scale = Vector2(0.575339, 0.585593)
+texture = ExtResource("10_ruaym")
+
+[node name="cam2L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1200.7, 551.565)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("9_yurpy")
+
+[node name="cam3L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1789.44, 533.81)
+scale = Vector2(0.575, 0.575)
+texture = ExtResource("10_p5u8y")
+
+[node name="cam4L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1567.62, 686.28)
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("11_dva60")
+
+[node name="cam5AL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1240.65, 659.84)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("12_s6qvf")
+
+[node name="cam6AL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1383.55, 697.65)
+scale = Vector2(0.565, 0.565)
+texture = ExtResource("13_va7l7")
+
+[node name="cam5BL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1236.28, 725.03)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("14_bclk7")
+
+[node name="cam6BL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1191, 816)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("15_fwst7")
+
+[node name="Buttons" type="Node2D" parent="cameraButtons"]
+
+[node name="cam0" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1361.0
+offset_top = 279.0
+offset_right = 1434.0
+offset_bottom = 329.0
+
+[node name="cam1A" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1350.0
+offset_top = 417.0
+offset_right = 1457.0
+offset_bottom = 469.0
+
+[node name="cam1B" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1318.0
+offset_top = 502.0
+offset_right = 1385.0
+offset_bottom = 549.0
+
+[node name="cam2" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1175.0
+offset_top = 531.0
+offset_right = 1235.0
+offset_bottom = 572.0
+
+[node name="cam3" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1751.0
+offset_top = 508.0
+offset_right = 1830.0
+offset_bottom = 556.0
+
+[node name="cam4" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1531.0
+offset_top = 669.0
+offset_right = 1606.0
+offset_bottom = 711.0
+
+[node name="cam6A" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1362.0
+offset_top = 684.0
+offset_right = 1413.0
+offset_bottom = 716.0
+
+[node name="cam6B" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1167.0
+offset_top = 800.0
+offset_right = 1218.0
+offset_bottom = 833.0
+
+[node name="cam5B" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1210.0
+offset_top = 706.0
+offset_right = 1265.0
+offset_bottom = 741.0
+
+[node name="cam5A" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1210.0
+offset_top = 643.27
+offset_right = 1265.0
+offset_bottom = 678.27
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="cerealTimer" to="." method="_on_cereal_timer_timeout"]
+[connection signal="area_entered" from="bowlEmpty/bowlArea" to="." method="_on_bowl_area_area_entered"]
+[connection signal="button_up" from="milkButton" to="." method="_on_milk_button_button_up"]
+[connection signal="button_up" from="cerealButton" to="." method="_on_cereal_button_button_up"]
+[connection signal="button_up" from="cerealDoneButton" to="." method="_on_cereal_done_button_button_up"]
+[connection signal="button_up" from="muteCall" to="." method="_on_mute_call_button_up"]
+[connection signal="button_up" from="placeCereal" to="." method="_on_place_cereal_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam0" to="cameraButtons" method="_on_cam_0_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam1A" to="cameraButtons" method="_on_cam_1a_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam1B" to="cameraButtons" method="_on_cam_1b_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam2" to="cameraButtons" method="_on_cam_2_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam3" to="cameraButtons" method="_on_cam_3_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam4" to="cameraButtons" method="_on_cam_4_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam6A" to="cameraButtons" method="_on_cam_6a_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam6B" to="cameraButtons" method="_on_cam_6b_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam5B" to="cameraButtons" method="_on_cam_5b_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam5A" to="cameraButtons" method="_on_cam_5a_button_up"]

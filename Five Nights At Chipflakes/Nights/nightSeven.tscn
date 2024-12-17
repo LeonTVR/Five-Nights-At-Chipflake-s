@@ -1,0 +1,769 @@
+[gd_scene load_steps=64 format=3 uid="uid://c7mhan8q0n0oa"]
+
+[ext_resource type="Script" path="res://Nights/nightSeven.gd" id="1_nloge"]
+[ext_resource type="Texture2D" uid="uid://d0s0pcmj8nodg" path="res://Assets/Sprites/office.png" id="2_m3ade"]
+[ext_resource type="Texture2D" uid="uid://bk17sj64n618e" path="res://Assets/Sprites/Cameras/stage/stageRegular.png" id="3_vbbq7"]
+[ext_resource type="Texture2D" uid="uid://bc6x51jfxd4ix" path="res://Assets/Sprites/border.png" id="4_i8pwo"]
+[ext_resource type="Texture2D" uid="uid://dru55nshs14lv" path="res://Assets/Sprites/cameraLayoutBackground.png" id="5_cooaf"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="6_b2y6n"]
+[ext_resource type="VideoStream" path="res://Assets/Animations/static.ogv" id="7_m3f1m"]
+[ext_resource type="Script" path="res://Nights/cameraButtonsNightFour.gd" id="8_wgmwy"]
+[ext_resource type="Texture2D" uid="uid://e8xoepeynfp4" path="res://Assets/Sprites/cam0L.png" id="9_owshs"]
+[ext_resource type="Texture2D" uid="uid://bx7bhtm1fo88c" path="res://Assets/Sprites/cam1AL.png" id="10_8t56t"]
+[ext_resource type="Texture2D" uid="uid://wm7sjem2d5dm" path="res://Assets/Sprites/cam1BL.png" id="11_l2w7o"]
+[ext_resource type="Texture2D" uid="uid://srd4jdp6v2po" path="res://Assets/Sprites/cam2L.png" id="12_3ei8t"]
+[ext_resource type="Texture2D" uid="uid://bisqw006l80y7" path="res://Assets/Sprites/cam3L.png" id="13_pxdv3"]
+[ext_resource type="Texture2D" uid="uid://bpag6roqbog1" path="res://Assets/Sprites/cam4L.png" id="14_7l2et"]
+[ext_resource type="Texture2D" uid="uid://b5kyqcbulvkfj" path="res://Assets/Sprites/cam5AL.png" id="15_og0cs"]
+[ext_resource type="Texture2D" uid="uid://cvnbe2t1if6ej" path="res://Assets/Sprites/cam6AL.png" id="16_4mcgj"]
+[ext_resource type="Texture2D" uid="uid://bmqwgnwv8n2ch" path="res://Assets/Sprites/cam5BL.png" id="17_meeqv"]
+[ext_resource type="Texture2D" uid="uid://bkk5e863rpkri" path="res://Assets/Sprites/cam6BL.png" id="18_qe60k"]
+[ext_resource type="AudioStream" uid="uid://585rj8vfmx11" path="res://Assets/Sound/SFX/cerealEatenNormal.mp3" id="19_vvedk"]
+[ext_resource type="AudioStream" uid="uid://kbpbdrr6mcdk" path="res://Assets/Sound/SFX/cerealEatenSoggy.mp3" id="20_cxfd5"]
+[ext_resource type="AudioStream" uid="uid://ddydjmbx4vkbw" path="res://Assets/Sound/SFX/milkCrime.mp3" id="21_wpisv"]
+[ext_resource type="AudioStream" uid="uid://832rdw3f43yo" path="res://Assets/Sound/SFX/hiding.mp3" id="21_y6a3j"]
+[ext_resource type="AudioStream" uid="uid://cudyleix5wdhl" path="res://Assets/Sound/SFX/chipflakeDeath.ogg" id="22_xyj4p"]
+[ext_resource type="AudioStream" uid="uid://d4crxav2cknyn" path="res://Assets/Sound/SFX/socksDeath.wav" id="23_y1sjj"]
+[ext_resource type="AudioStream" uid="uid://ctlgc1jndurpr" path="res://Assets/Sound/SFX/yay.mp3" id="24_a4f0w"]
+[ext_resource type="AudioStream" uid="uid://1rt7bl3mwhx5" path="res://Assets/Sound/SFX/cameraFlip.mp3" id="25_kxsfv"]
+[ext_resource type="AudioStream" uid="uid://dcg4xpojyays6" path="res://Assets/Sound/SFX/characterMove.mp3" id="26_o634u"]
+[ext_resource type="AudioStream" uid="uid://nwvsytlrt6t" path="res://Assets/Sound/SFX/gunShot.mp3" id="27_d1mxk"]
+[ext_resource type="AudioStream" uid="uid://cebarkyeuq78a" path="res://Assets/Sound/SFX/socksShot.wav" id="28_d5fbf"]
+[ext_resource type="AudioStream" uid="uid://c48ovun7q5de0" path="res://Assets/Sound/SFX/chipShot.wav" id="29_o5j2m"]
+[ext_resource type="AudioStream" uid="uid://bm2aq00ad8v0t" path="res://Assets/Sound/SFX/skunkVentCrawl.mp3" id="30_2d3n0"]
+[ext_resource type="AudioStream" uid="uid://b3d76m25hss3d" path="res://Assets/Sound/SFX/androRun.mp3" id="31_6auqq"]
+[ext_resource type="Texture2D" uid="uid://dmjtkf6p4dtwb" path="res://Assets/Sprites/cerealStation.png" id="32_ppktm"]
+[ext_resource type="Texture2D" uid="uid://dd1yvsmfkoqt2" path="res://Assets/Sprites/cerealButton.png" id="33_otch8"]
+[ext_resource type="Texture2D" uid="uid://od8kre3wofdo" path="res://Assets/Sprites/milk.png" id="34_yosqh"]
+[ext_resource type="Texture2D" uid="uid://b5itoa4prtrnj" path="res://Assets/Sprites/cereal.png" id="35_btrt2"]
+[ext_resource type="Texture2D" uid="uid://xmlx64jibimq" path="res://Assets/Sprites/bowlEmpty.png" id="36_vuyql"]
+[ext_resource type="Texture2D" uid="uid://bmlas5qq270nq" path="res://Assets/Sprites/bowlCereal.png" id="37_1g4bg"]
+[ext_resource type="Texture2D" uid="uid://cbasnf2i7t11s" path="res://Assets/Sprites/bowlCum.png" id="38_d2moe"]
+[ext_resource type="Texture2D" uid="uid://4nys72oyqqar" path="res://Assets/Sprites/bowlBoth.png" id="39_yi52e"]
+[ext_resource type="Texture2D" uid="uid://r3dh8304n8ae" path="res://Assets/Sprites/clickMe.png" id="40_ryirj"]
+[ext_resource type="Texture2D" uid="uid://bf83tams53spc" path="res://Assets/Sprites/cerealPour.png" id="41_0vr38"]
+[ext_resource type="Texture2D" uid="uid://dfrn4ckl7h3u8" path="res://Assets/Sprites/milkPour.png" id="42_rl1ge"]
+[ext_resource type="Texture2D" uid="uid://5bgs52xl2c8k" path="res://Assets/Sprites/mess.png" id="43_8qr0u"]
+[ext_resource type="Texture2D" uid="uid://ck16jwfh58usk" path="res://Assets/Sprites/heaterCheckOff.png" id="44_5kyt4"]
+[ext_resource type="Texture2D" uid="uid://d4emrly40vr77" path="res://Assets/Sprites/heaterCheckOn.png" id="45_uufqo"]
+[ext_resource type="Texture2D" uid="uid://dt8xhvi03bumg" path="res://Assets/Sprites/cameraButton.png" id="46_v6gr7"]
+[ext_resource type="Texture2D" uid="uid://rjflm1xy8l37" path="res://Assets/Sprites/hide.png" id="47_02u84"]
+[ext_resource type="Texture2D" uid="uid://netcpayswbn8" path="res://Assets/Sprites/hidingAndro.png" id="48_muf8p"]
+[ext_resource type="Texture2D" uid="uid://dm3cifx3r12e8" path="res://Assets/Sprites/hidingAndroGone.png" id="49_7lkv7"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="50_ux0b1"]
+[ext_resource type="Texture2D" uid="uid://twce6fsa5rps" path="res://Assets/Sprites/jumpscareChip.png" id="51_btdeh"]
+[ext_resource type="Texture2D" uid="uid://bnrt1kacpx5yk" path="res://Assets/Sprites/jumpscareSocks.png" id="52_hoqi0"]
+[ext_resource type="Texture2D" uid="uid://diygss8amp50g" path="res://Assets/Sprites/jumpscareAndro.png" id="53_tin0o"]
+
+[sub_resource type="GDScript" id="GDScript_b0qbx"]
+script/source = "extends Node2D
+
+var time = 0;
+
+var random;
+
+var level = 0;
+
+func move():
+	pass
+
+func _on_timer_timeout():
+	var mouseX = get_global_mouse_position().x;
+	var mouseY = get_global_mouse_position().y;
+	
+	time += 1;
+
+	var rng = RandomNumberGenerator.new();
+	
+	rng.seed = mouseX/mouseY+time;
+	
+	random = rng.randi_range(0.0, 20.0);
+
+	if random > level || random == level:
+		move();
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wkku"]
+size = Vector2(298.333, 506.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6b41"]
+size = Vector2(413.333, 476.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flew5"]
+size = Vector2(230, 337.52)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bombb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ime4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt66v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jmjl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="GDScript" id="GDScript_tq80c"]
+script/source = "extends Label
+
+func _process(delta):
+	await get_tree().create_timer(1).timeout;
+"
+
+[node name="NightSeven" type="Node2D" node_paths=PackedStringArray("darkness", "office", "penis", "border", "timeLabel", "cameraLayout", "cameraView", "cameraButtons", "penisTwo", "chipJumpscareSound", "jumpscareChip", "cameraTextNode", "cerealStation", "cerealButton", "cameraButton", "cereal", "milk", "bowlEmpty", "bowlCereal", "bowlCum", "bowlBoth", "cerealPour", "milkPour", "milkCrime", "clickMe", "cerealTimerLabel", "bowlTimer", "cerealTimer2", "soggyCereal", "placeCereal", "cerealEatenNormal", "cerealEatenSoggy", "yay", "winText", "cameraFlip", "characterMove", "gunShot", "shootGlock", "socksShot", "chipShot", "heaterCheckOff", "heaterCheckOn", "heaterText", "heaterButton", "heaterPowerText", "skunkVentCrawl", "mess", "jumpscareSocks", "socksJumpscareSound", "androRun", "hide", "hideInfo", "hideCooldown", "hidingAndro", "hidingAndroGone", "hidingWait", "jumpscareAndro", "cerealAmountLabel", "cerealEatenSprite", "hidingAudio")]
+script = ExtResource("1_nloge")
+darkness = NodePath("fade")
+office = NodePath("office")
+penis = NodePath("static")
+border = NodePath("border")
+timeLabel = NodePath("time")
+cameraLayout = NodePath("cameraLayoutBackground")
+cameraView = NodePath("cameraView")
+cameraButtons = NodePath("cameraButtons")
+penisTwo = NodePath("cameraButtons")
+chipJumpscareSound = NodePath("chipJumpscare")
+jumpscareChip = NodePath("jumpscareChip")
+cameraTextNode = NodePath("cameraText")
+cerealStation = NodePath("cerealStation")
+cerealButton = NodePath("cerealStationButton")
+cameraButton = NodePath("cameraButtonSprite")
+cereal = NodePath("cereal")
+milk = NodePath("milk")
+bowlEmpty = NodePath("bowlEmpty")
+bowlCereal = NodePath("bowlCereal")
+bowlCum = NodePath("bowlCum")
+bowlBoth = NodePath("bowlBoth")
+cerealPour = NodePath("cerealPour")
+milkPour = NodePath("milkPour")
+milkCrime = NodePath("milkCrime")
+clickMe = NodePath("clickMe")
+cerealTimerLabel = NodePath("cerealTimerLabel")
+bowlTimer = NodePath("bowlTimer")
+cerealTimer2 = NodePath("cerealTimer")
+soggyCereal = NodePath("soggyCereal")
+placeCereal = NodePath("placeCereal")
+cerealEatenNormal = NodePath("cerealEatenNormal")
+cerealEatenSoggy = NodePath("cerealEatenSoggy")
+yay = NodePath("yay")
+winText = NodePath("6AM")
+cameraFlip = NodePath("cameraFlip")
+characterMove = NodePath("characterMove")
+gunShot = NodePath("gunShot")
+shootGlock = NodePath("shootGlock")
+socksShot = NodePath("socksShot")
+chipShot = NodePath("chipShot")
+heaterCheckOff = NodePath("heaterCheckOff")
+heaterCheckOn = NodePath("heaterCheckOn")
+heaterText = NodePath("heaterText")
+heaterButton = NodePath("heaterButton")
+heaterPowerText = NodePath("heaterPowerText")
+skunkVentCrawl = NodePath("skunkVentCrawl")
+mess = NodePath("cerealEaten")
+jumpscareSocks = NodePath("jumpscareSocks")
+socksJumpscareSound = NodePath("socksJumpscare")
+androRun = NodePath("androRun")
+hide = NodePath("hide")
+hideInfo = NodePath("hideInfo")
+hideCooldown = NodePath("hideCooldown")
+hidingAndro = NodePath("hidingAndro")
+hidingAndroGone = NodePath("hidingAndroGone")
+hidingWait = NodePath("hidingWait")
+jumpscareAndro = NodePath("jumpscareAndro")
+cerealAmountLabel = NodePath("cerealAmount")
+cerealEatenSprite = NodePath("cerealEaten")
+hidingAudio = NodePath("hiding")
+
+[node name="office" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_m3ade")
+
+[node name="cameraView" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("3_vbbq7")
+
+[node name="border" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("4_i8pwo")
+
+[node name="cameraLayoutBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1491.53, 570.305)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("5_cooaf")
+
+[node name="cameraText" type="Label" parent="."]
+visible = false
+offset_left = 1335.32
+offset_top = 824.0
+offset_right = 1882.32
+offset_bottom = 896.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 45
+text = "Main Stage"
+horizontal_alignment = 2
+
+[node name="static" type="VideoStreamPlayer" parent="."]
+modulate = Color(1, 1, 1, 0.0392157)
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("7_m3f1m")
+loop = true
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="timerChip" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="timerSocks" type="Timer" parent="."]
+wait_time = 8.75
+autostart = true
+
+[node name="cerealTimer" type="Timer" parent="."]
+
+[node name="heaterPowerTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="skunkTimer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[node name="androTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="hideCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="hidingWait" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Chip" type="Node2D" parent="."]
+script = SubResource("GDScript_b0qbx")
+
+[node name="cerealEatenNormal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_vvedk")
+volume_db = 17.487
+
+[node name="cerealEatenSoggy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_cxfd5")
+volume_db = 17.487
+
+[node name="milkCrime" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_wpisv")
+volume_db = 17.487
+
+[node name="chipJumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_xyj4p")
+volume_db = 17.487
+
+[node name="socksJumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_y1sjj")
+volume_db = 17.487
+
+[node name="yay" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_a4f0w")
+volume_db = 17.487
+
+[node name="cameraFlip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_kxsfv")
+volume_db = 10.0
+
+[node name="characterMove" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_o634u")
+volume_db = 10.0
+
+[node name="gunShot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_d1mxk")
+volume_db = 10.0
+
+[node name="socksShot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_d5fbf")
+volume_db = 10.0
+
+[node name="chipShot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_o5j2m")
+volume_db = 10.0
+
+[node name="skunkVentCrawl" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_2d3n0")
+volume_db = -80.0
+autoplay = true
+
+[node name="androRun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_6auqq")
+volume_db = 15.0
+
+[node name="hiding" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_y6a3j")
+
+[node name="cerealStation" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("32_ppktm")
+
+[node name="cerealStationButton" type="Sprite2D" parent="."]
+position = Vector2(1805, 613.435)
+texture = ExtResource("33_otch8")
+
+[node name="milk" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1290, 534)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("34_yosqh")
+
+[node name="milkArea" type="Area2D" parent="milk"]
+
+[node name="milkCollision" type="CollisionShape2D" parent="milk/milkArea"]
+position = Vector2(-12.5002, 1.66656)
+shape = SubResource("RectangleShape2D_1wkku")
+
+[node name="cereal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1055, 534)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("35_btrt2")
+
+[node name="cerealArea" type="Area2D" parent="cereal"]
+
+[node name="cerealCollision" type="CollisionShape2D" parent="cereal/cerealArea"]
+position = Vector2(1.66675, 6.66663)
+shape = SubResource("RectangleShape2D_k6b41")
+
+[node name="bowlEmpty" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("36_vuyql")
+
+[node name="bowlArea" type="Area2D" parent="bowlEmpty"]
+
+[node name="bowlCollision" type="CollisionShape2D" parent="bowlEmpty/bowlArea"]
+position = Vector2(0.505005, -158.76)
+shape = SubResource("RectangleShape2D_flew5")
+
+[node name="bowlCereal" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("37_1g4bg")
+
+[node name="bowlCum" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("38_d2moe")
+
+[node name="bowlBoth" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(796.495, 600)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("39_yi52e")
+
+[node name="clickMe" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(789, 217)
+texture = ExtResource("40_ryirj")
+
+[node name="cerealPour" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(790, 367)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("41_0vr38")
+
+[node name="milkPour" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(983, 367)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("42_rl1ge")
+
+[node name="cerealEaten" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("43_8qr0u")
+
+[node name="milkButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1193.0
+offset_top = 382.0
+offset_right = 1385.0
+offset_bottom = 684.0
+
+[node name="cerealButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 926.0
+offset_top = 405.0
+offset_right = 1161.0
+offset_bottom = 674.0
+
+[node name="cerealDoneButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 648.0
+offset_top = 553.0
+offset_right = 947.0
+offset_bottom = 691.0
+
+[node name="placeCereal" type="Button" parent="."]
+visible = false
+offset_left = 57.515
+offset_top = 253.57
+offset_right = 825.515
+offset_bottom = 401.57
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_bombb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3ime4")
+text = "Place Cereal"
+
+[node name="shootGlock" type="Button" parent="."]
+visible = false
+offset_left = 57.515
+offset_top = 253.57
+offset_right = 825.515
+offset_bottom = 401.57
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_wt66v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5jmjl")
+text = "Shoot Glock"
+
+[node name="time" type="Label" parent="."]
+offset_left = 1517.0
+offset_top = 15.0
+offset_right = 1902.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 80
+text = "12:00 AM"
+script = SubResource("GDScript_tq80c")
+
+[node name="night" type="Label" parent="."]
+offset_left = 1491.94
+offset_top = 126.0
+offset_right = 1915.94
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 60
+text = "Night Seven
+"
+
+[node name="bowlTimer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1190.68, 80.635)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("39_yi52e")
+
+[node name="cerealTimerLabel" type="Label" parent="."]
+visible = false
+offset_left = 1318.0
+offset_top = 18.0
+offset_right = 1416.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 80
+text = "10"
+
+[node name="soggyCereal" type="Label" parent="."]
+visible = false
+offset_left = 144.045
+offset_top = 396.96
+offset_right = 1881.05
+offset_bottom = 536.96
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 80
+text = "The cereal has turned soggy."
+
+[node name="heaterCheckOff" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(475.2, 908.525)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("44_5kyt4")
+
+[node name="heaterCheckOn" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(475.2, 908.525)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("45_uufqo")
+
+[node name="heaterText" type="Label" parent="."]
+visible = false
+offset_left = 47.115
+offset_top = 838.765
+offset_right = 404.115
+offset_bottom = 950.765
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 80
+text = "Heater:"
+
+[node name="heaterPowerText" type="Label" parent="."]
+visible = false
+offset_left = 47.115
+offset_top = 917.1
+offset_right = 404.115
+offset_bottom = 1029.1
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 80
+text = "100%"
+
+[node name="heaterButton" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 408.0
+offset_top = 843.0
+offset_right = 536.0
+offset_bottom = 974.0
+
+[node name="cameraButtonSprite" type="Sprite2D" parent="."]
+position = Vector2(960, 950)
+texture = ExtResource("46_v6gr7")
+
+[node name="hide" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1010, 745)
+texture = ExtResource("47_02u84")
+
+[node name="hideInfo" type="Label" parent="."]
+offset_left = 364.0
+offset_top = 434.0
+offset_right = 1575.0
+offset_bottom = 613.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 128
+text = "Press H to hide."
+
+[node name="hidingAndro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("48_muf8p")
+
+[node name="hidingAndroGone" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("49_7lkv7")
+
+[node name="cerealAmount" type="Label" parent="."]
+offset_left = 567.0
+offset_top = 806.0
+offset_right = 1369.0
+offset_bottom = 904.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 70
+text = "You have 10 cereal."
+metadata/_edit_use_anchors_ = true
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("50_ux0b1")
+
+[node name="cameraButtons" type="Node2D" parent="." node_paths=PackedStringArray("cameraView", "cameraText", "cam0L", "cam1AL", "cam1BL", "cam2L", "cam3L", "cam4L", "cam5AL", "cam6AL", "cam5BL", "cam6BL", "placeCereal", "penis", "script2", "shootGlock")]
+script = ExtResource("8_wgmwy")
+cameraView = NodePath("../cameraView")
+cameraText = NodePath("../cameraText")
+cam0L = NodePath("Sprites/cam0L")
+cam1AL = NodePath("Sprites/cam1AL")
+cam1BL = NodePath("Sprites/cam1BL")
+cam2L = NodePath("Sprites/cam2L")
+cam3L = NodePath("Sprites/cam3L")
+cam4L = NodePath("Sprites/cam4L")
+cam5AL = NodePath("Sprites/cam5AL")
+cam6AL = NodePath("Sprites/cam6AL")
+cam5BL = NodePath("Sprites/cam5BL")
+cam6BL = NodePath("Sprites/cam6BL")
+placeCereal = NodePath("../placeCereal")
+penis = NodePath("..")
+script2 = NodePath("..")
+shootGlock = NodePath("../shootGlock")
+
+[node name="Sprites" type="Node2D" parent="cameraButtons"]
+visible = false
+
+[node name="cam0L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1395.18, 301.93)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("9_owshs")
+
+[node name="cam1AL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1397.41, 443.76)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("10_8t56t")
+
+[node name="cam1BL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1348.4, 523.599)
+scale = Vector2(0.575339, 0.585593)
+texture = ExtResource("11_l2w7o")
+
+[node name="cam2L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1200.7, 551.565)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("12_3ei8t")
+
+[node name="cam3L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1789.44, 533.81)
+scale = Vector2(0.575, 0.575)
+texture = ExtResource("13_pxdv3")
+
+[node name="cam4L" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1567.62, 686.28)
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("14_7l2et")
+
+[node name="cam5AL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1240.65, 659.84)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("15_og0cs")
+
+[node name="cam6AL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1383.55, 697.65)
+scale = Vector2(0.565, 0.565)
+texture = ExtResource("16_4mcgj")
+
+[node name="cam5BL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1236.28, 725.03)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("17_meeqv")
+
+[node name="cam6BL" type="Sprite2D" parent="cameraButtons/Sprites"]
+visible = false
+position = Vector2(1191, 816)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("18_qe60k")
+
+[node name="Buttons" type="Node2D" parent="cameraButtons"]
+
+[node name="cam0" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1361.0
+offset_top = 279.0
+offset_right = 1434.0
+offset_bottom = 329.0
+
+[node name="cam1A" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1350.0
+offset_top = 417.0
+offset_right = 1457.0
+offset_bottom = 469.0
+
+[node name="cam1B" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1318.0
+offset_top = 502.0
+offset_right = 1385.0
+offset_bottom = 549.0
+
+[node name="cam2" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1175.0
+offset_top = 531.0
+offset_right = 1235.0
+offset_bottom = 572.0
+
+[node name="cam3" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1751.0
+offset_top = 508.0
+offset_right = 1830.0
+offset_bottom = 556.0
+
+[node name="cam4" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1531.0
+offset_top = 669.0
+offset_right = 1606.0
+offset_bottom = 711.0
+
+[node name="cam6A" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1362.0
+offset_top = 684.0
+offset_right = 1413.0
+offset_bottom = 716.0
+
+[node name="cam6B" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1167.0
+offset_top = 800.0
+offset_right = 1218.0
+offset_bottom = 833.0
+
+[node name="cam5B" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1210.0
+offset_top = 706.0
+offset_right = 1265.0
+offset_bottom = 741.0
+
+[node name="cam5A" type="Button" parent="cameraButtons/Buttons"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 1210.0
+offset_top = 643.27
+offset_right = 1265.0
+offset_bottom = 678.27
+
+[node name="jumpscareChip" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 538.487)
+texture = ExtResource("51_btdeh")
+
+[node name="jumpscareSocks" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 537.642)
+scale = Vector2(1.31, 1.31)
+texture = ExtResource("52_hoqi0")
+
+[node name="jumpscareAndro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 570.217)
+texture = ExtResource("53_tin0o")
+
+[node name="6AM" type="Label" parent="."]
+visible = false
+offset_left = 415.0
+offset_top = 362.0
+offset_right = 1505.0
+offset_bottom = 718.0
+theme_override_fonts/font = ExtResource("6_b2y6n")
+theme_override_font_sizes/font_size = 256
+text = "6:00 AM"
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timerChip" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="timerSocks" to="." method="_on_timer_socks_timeout"]
+[connection signal="timeout" from="cerealTimer" to="." method="_on_cereal_timer_timeout"]
+[connection signal="timeout" from="heaterPowerTimer" to="." method="_on_heater_power_timer_timeout"]
+[connection signal="timeout" from="skunkTimer" to="." method="_on_skunk_timer_timeout"]
+[connection signal="timeout" from="androTimer" to="." method="_on_andro_timer_timeout"]
+[connection signal="timeout" from="hideCooldown" to="." method="_on_hide_cooldown_timeout"]
+[connection signal="timeout" from="hidingWait" to="." method="_on_hiding_wait_timeout"]
+[connection signal="area_entered" from="bowlEmpty/bowlArea" to="." method="_on_bowl_area_area_entered"]
+[connection signal="button_up" from="milkButton" to="." method="_on_milk_button_button_up"]
+[connection signal="button_up" from="cerealButton" to="." method="_on_cereal_button_button_up"]
+[connection signal="button_up" from="cerealDoneButton" to="." method="_on_cereal_done_button_button_up"]
+[connection signal="button_up" from="placeCereal" to="." method="_on_place_cereal_button_up"]
+[connection signal="button_up" from="shootGlock" to="." method="_on_shoot_glock_button_up"]
+[connection signal="button_up" from="heaterButton" to="." method="_on_heater_button_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam0" to="cameraButtons" method="_on_cam_0_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam1A" to="cameraButtons" method="_on_cam_1a_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam1B" to="cameraButtons" method="_on_cam_1b_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam2" to="cameraButtons" method="_on_cam_2_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam3" to="cameraButtons" method="_on_cam_3_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam4" to="cameraButtons" method="_on_cam_4_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam6A" to="cameraButtons" method="_on_cam_6a_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam6B" to="cameraButtons" method="_on_cam_6b_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam5B" to="cameraButtons" method="_on_cam_5b_button_up"]
+[connection signal="button_up" from="cameraButtons/Buttons/cam5A" to="cameraButtons" method="_on_cam_5a_button_up"]

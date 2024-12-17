@@ -1,0 +1,182 @@
+[gd_scene load_steps=9 format=3 uid="uid://y0haw71gvua5"]
+
+[ext_resource type="Script" path="res://Scenes/journal.gd" id="1_103bs"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="1_cy2qg"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="2_30nuw"]
+[ext_resource type="Texture2D" uid="uid://h0tauo1cj2th" path="res://Assets/Sprites/arrowLeft.png" id="4_ox1r5"]
+[ext_resource type="Texture2D" uid="uid://c0sdyf1vtgq51" path="res://Assets/Sprites/arrowRight.png" id="5_ipli1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f47wu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkrnb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydxq0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Journal" type="Node2D" node_paths=PackedStringArray("footer", "dayOne", "dayTwo", "dayThree", "dayFour", "dayFive", "daySix")]
+script = ExtResource("1_103bs")
+footer = NodePath("Footer")
+dayOne = NodePath("Day One")
+dayTwo = NodePath("Day Two")
+dayThree = NodePath("Day Three")
+dayFour = NodePath("Day Four")
+dayFive = NodePath("Day Five")
+daySix = NodePath("Day Six")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_cy2qg")
+
+[node name="Header" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 100
+text = "Journal Of Previous Nightguard"
+
+[node name="Footer" type="Label" parent="."]
+offset_left = 761.0
+offset_top = 885.0
+offset_right = 1160.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 100
+text = "Page: 1"
+
+[node name="Day One" type="Label" parent="."]
+offset_left = -3643.0
+offset_top = 223.0
+offset_right = 5529.0
+offset_bottom = 1074.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 64
+text = "Day One:
+
+Today's been pretty good. 
+I got a new job at chipflake's!
+ It seems pretty good, I just need to look at some
+ cameras and sit here all night! 
+Seems nice. I'll start working tomorrow."
+horizontal_alignment = 1
+
+[node name="Day Two" type="Label" parent="."]
+visible = false
+offset_left = -3643.0
+offset_top = 223.0
+offset_right = 5529.0
+offset_bottom = 1074.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 50
+text = "Day Two:
+
+This was a horrible idea. These characters 
+weren't what they seemed. They're armed with
+pistols and want to shoot me. Only chip has
+started trying to get to me, but the others
+might as well. I'm forced to work here for
+at least one week. Chip likes special k, so I ran
+out, bought some, and came back."
+horizontal_alignment = 1
+
+[node name="Day Three" type="Label" parent="."]
+visible = false
+offset_left = -3643.0
+offset_top = 223.0
+offset_right = 5529.0
+offset_bottom = 1074.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 50
+text = "Day Three:
+
+I brought my pistol. I tried it on chip but he
+came running with rage in his eyes. I baited him
+with some special k and he went to the stage.
+NEVER SHOOT CHIP. Socks also started trying to
+get me. I tried the pistol on him, and he said
+fuck you and went back to the stage. It doesn't
+really do much damage, just hurts."
+horizontal_alignment = 1
+
+[node name="Day Four" type="Label" parent="."]
+visible = false
+offset_left = -3643.0
+offset_top = 223.0
+offset_right = 5529.0
+offset_bottom = 1074.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 50
+text = "Day Four:
+
+I'm really happy to have survived this long.
+A weird skunk lives in the vents and tries to eat
+my special k cereal. I just use the heater to
+make it go away. Also chip and socks are giant.
+Chip's 7 feet tall and socks is 8. I also learned
+they can lift over 20000 pounds. I tried to block
+the entrances with 20000 pound steel."
+horizontal_alignment = 1
+
+[node name="Day Five" type="Label" parent="."]
+visible = false
+offset_left = -3643.0
+offset_top = 223.0
+offset_right = 5529.0
+offset_bottom = 1074.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 64
+text = "Day Five:
+
+Andro has started coming. He lives in the
+backstage. He slowly comes out and I have to
+hide under my table. It's terrifying. He's
+actually the only reasonably sized character
+though. He's only 6 feet compared to 7 and 8."
+horizontal_alignment = 1
+
+[node name="Day Six" type="Label" parent="."]
+visible = false
+offset_left = -3643.0
+offset_top = 223.0
+offset_right = 5529.0
+offset_bottom = 1074.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 64
+text = "Day Six:
+
+This isn't good. They're all ganging up on me. 
+I don't know h"
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 173.0
+offset_right = 406.0
+offset_bottom = 391.0
+theme_override_fonts/font = ExtResource("2_30nuw")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/focus = SubResource("StyleBoxFlat_f47wu")
+text = "Exit"
+
+[node name="Left" type="Button" parent="."]
+offset_left = 611.0
+offset_top = 873.0
+offset_right = 753.0
+offset_bottom = 1115.0
+scale = Vector2(0.755, 0.755)
+theme_override_styles/focus = SubResource("StyleBoxFlat_pkrnb")
+icon = ExtResource("4_ox1r5")
+
+[node name="Right" type="Button" parent="."]
+offset_left = 1223.0
+offset_top = 884.0
+offset_right = 1365.0
+offset_bottom = 1126.0
+scale = Vector2(0.755, 0.755)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ydxq0")
+icon = ExtResource("5_ipli1")
+
+[connection signal="button_up" from="Exit" to="." method="_on_exit_button_up"]
+[connection signal="button_up" from="Left" to="." method="_on_left_button_up"]
+[connection signal="button_up" from="Right" to="." method="_on_right_button_up"]

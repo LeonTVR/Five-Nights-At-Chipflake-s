@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bisuxyu5l7krv"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_3pbd5"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="1_hctx3"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="2_ed6w3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogiuw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Credits" type="Node2D" node_paths=PackedStringArray("fade")]
+script = ExtResource("1_3pbd5")
+fade = NodePath("fade")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_hctx3")
+
+[node name="topLabel" type="Label" parent="."]
+offset_left = 615.0
+offset_top = 26.52
+offset_right = 1304.0
+offset_bottom = 236.52
+theme_override_fonts/font = ExtResource("2_ed6w3")
+theme_override_font_sizes/font_size = 150
+text = "Credits"
+
+[node name="leonCredit" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 217.0
+offset_right = 1955.0
+offset_bottom = 533.51
+theme_override_fonts/font = ExtResource("2_ed6w3")
+theme_override_font_sizes/font_size = 58
+text = "Leon: Programmer, writer, and 
+director. Contact on discord
+with the username Leondagreatest."
+
+[node name="raffbeeCredit" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 539.195
+offset_right = 1955.0
+offset_bottom = 855.705
+theme_override_fonts/font = ExtResource("2_ed6w3")
+theme_override_font_sizes/font_size = 58
+text = "Raffbee: Artist of all art except 
+characters. See art at BLANK."
+
+[node name="otherCredit" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 890.0
+offset_right = 2409.0
+offset_bottom = 1206.51
+theme_override_fonts/font = ExtResource("2_ed6w3")
+theme_override_font_sizes/font_size = 32
+text = "The main menu music is an edited version of a song by Lovprod which you can find the music of 
+here: soundcloud.com/lovprod All characters drawn by chipflake which you can find at 
+https://linktr.ee/chipflake All links clickable on the itch.io page."
+
+[node name="exit" type="Button" parent="."]
+offset_left = 1457.0
+offset_top = 30.0
+offset_right = 1895.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("2_ed6w3")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxFlat_ogiuw")
+text = "Return To 
+Main Menu"
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_hctx3")
+
+[connection signal="button_up" from="exit" to="." method="_on_exit_button_up"]

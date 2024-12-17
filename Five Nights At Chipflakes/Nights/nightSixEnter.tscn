@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq3kprxrcapdn"]
+
+[ext_resource type="Script" path="res://Nights/nightSixEnter.gd" id="1_vwlyq"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="1_wyphq"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="2_nsrq2"]
+
+[node name="NightOneEnter" type="Node2D" node_paths=PackedStringArray("darkness")]
+script = ExtResource("1_vwlyq")
+darkness = NodePath("fade")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_wyphq")
+
+[node name="night" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 679.0
+offset_top = 470.0
+offset_right = 1241.0
+offset_bottom = 610.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nsrq2")
+theme_override_font_sizes/font_size = 100
+text = "Night Six"
+horizontal_alignment = 1
+
+[node name="twelveAM" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 755.81
+offset_top = 630.0
+offset_right = 1156.39
+offset_bottom = 770.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nsrq2")
+theme_override_font_sizes/font_size = 80
+text = "12:00 AM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_wyphq")

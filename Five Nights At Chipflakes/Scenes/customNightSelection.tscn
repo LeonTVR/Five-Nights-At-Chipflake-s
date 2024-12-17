@@ -1,0 +1,252 @@
+[gd_scene load_steps=29 format=3 uid="uid://di40o7ul7ufbh"]
+
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="1_21qg4"]
+[ext_resource type="Script" path="res://Scripts/customNightSelection.gd" id="1_csix3"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="2_f17pe"]
+[ext_resource type="Texture2D" uid="uid://dtjoshprkf40q" path="res://Assets/Sprites/chipCustomNight.png" id="3_y51i8"]
+[ext_resource type="Texture2D" uid="uid://bu13aprxivo4h" path="res://Assets/Sprites/socksCustomNight.png" id="4_bvns8"]
+[ext_resource type="Texture2D" uid="uid://s75dnoe0na2a" path="res://Assets/Sprites/skunkCustomNight.png" id="5_qov4r"]
+[ext_resource type="Texture2D" uid="uid://doli73ocscq0k" path="res://Assets/Sprites/androCustomNight.png" id="6_e8koy"]
+[ext_resource type="Texture2D" uid="uid://h0tauo1cj2th" path="res://Assets/Sprites/arrowLeft.png" id="7_dvs33"]
+[ext_resource type="Texture2D" uid="uid://c0sdyf1vtgq51" path="res://Assets/Sprites/arrowRight.png" id="8_eydp4"]
+[ext_resource type="AudioStream" uid="uid://fobaw73yy3tt" path="res://Assets/Sound/SFX/immature.mp3" id="10_gkdfj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7v8jv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtdsa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlxve"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wykwy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w6lc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_854fc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxwew"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rwui"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdeyf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhmq1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anxas"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsyt7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tfht"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbdoy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk4pd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5oii"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58rd4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ods15"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="CustomNightSelection" type="Node2D" node_paths=PackedStringArray("chipLevelLabel", "socksLevelLabel", "skunkLevelLabel", "androLevelLabel", "darkness", "immature")]
+script = ExtResource("1_csix3")
+chipLevelLabel = NodePath("chipLevel")
+socksLevelLabel = NodePath("socksLevel")
+skunkLevelLabel = NodePath("skunkLevel")
+androLevelLabel = NodePath("androLevel")
+darkness = NodePath("fade")
+immature = NodePath("immature")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_21qg4")
+
+[node name="topLabel" type="Label" parent="."]
+offset_left = 475.0
+offset_top = 46.58
+offset_right = 1444.0
+offset_bottom = 186.58
+theme_override_fonts/font = ExtResource("2_f17pe")
+theme_override_font_sizes/font_size = 100
+text = "Customize Night"
+
+[node name="start" type="Button" parent="."]
+offset_left = 1118.19
+offset_top = 917.295
+offset_right = 1916.19
+offset_bottom = 1079.3
+theme_override_fonts/font = ExtResource("2_f17pe")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/focus = SubResource("StyleBoxFlat_7v8jv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vtdsa")
+text = "Start Night!"
+
+[node name="chip" type="Sprite2D" parent="."]
+position = Vector2(300, 460.24)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_y51i8")
+
+[node name="socks" type="Sprite2D" parent="."]
+position = Vector2(750, 460.24)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_bvns8")
+
+[node name="skunk" type="Sprite2D" parent="."]
+position = Vector2(1200, 460.24)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_qov4r")
+
+[node name="andro" type="Sprite2D" parent="."]
+position = Vector2(1650, 460.24)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_e8koy")
+
+[node name="chipLevel" type="Label" parent="."]
+offset_left = 260.0
+offset_top = 680.0
+offset_right = 304.0
+offset_bottom = 770.0
+theme_override_fonts/font = ExtResource("2_f17pe")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="socksLevel" type="Label" parent="."]
+offset_left = 731.0
+offset_top = 680.0
+offset_right = 775.0
+offset_bottom = 770.0
+theme_override_fonts/font = ExtResource("2_f17pe")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="skunkLevel" type="Label" parent="."]
+offset_left = 1169.0
+offset_top = 680.0
+offset_right = 1213.0
+offset_bottom = 770.0
+theme_override_fonts/font = ExtResource("2_f17pe")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="androLevel" type="Label" parent="."]
+offset_left = 1625.0
+offset_top = 680.0
+offset_right = 1669.0
+offset_bottom = 770.0
+theme_override_fonts/font = ExtResource("2_f17pe")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="chipLeftArrow" type="Button" parent="."]
+offset_left = 153.0
+offset_top = 668.0
+offset_right = 295.0
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_nlxve")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wykwy")
+icon = ExtResource("7_dvs33")
+
+[node name="chipRightArrow" type="Button" parent="."]
+offset_left = 340.0
+offset_top = 668.0
+offset_right = 482.0
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_3w6lc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_854fc")
+icon = ExtResource("8_eydp4")
+
+[node name="socksLeftArrow" type="Button" parent="."]
+offset_left = 614.8
+offset_top = 668.0
+offset_right = 756.8
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_rxwew")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rwui")
+icon = ExtResource("7_dvs33")
+
+[node name="socksRightArrow" type="Button" parent="."]
+offset_left = 823.415
+offset_top = 668.0
+offset_right = 965.415
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_sdeyf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vhmq1")
+icon = ExtResource("8_eydp4")
+
+[node name="skunkLeftArrow" type="Button" parent="."]
+offset_left = 1048.65
+offset_top = 668.0
+offset_right = 1190.65
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_anxas")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nsyt7")
+icon = ExtResource("7_dvs33")
+
+[node name="skunkRightArrow" type="Button" parent="."]
+offset_left = 1251.99
+offset_top = 668.0
+offset_right = 1393.99
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_1tfht")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sbdoy")
+icon = ExtResource("8_eydp4")
+
+[node name="androLeftArrow" type="Button" parent="."]
+offset_left = 1503.31
+offset_top = 668.0
+offset_right = 1645.31
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_nk4pd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q5oii")
+icon = ExtResource("7_dvs33")
+
+[node name="androRightArrow" type="Button" parent="."]
+offset_left = 1714.14
+offset_top = 668.0
+offset_right = 1856.14
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxFlat_58rd4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ods15")
+icon = ExtResource("8_eydp4")
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_21qg4")
+
+[node name="immature" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_gkdfj")
+
+[connection signal="button_up" from="start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="chipLeftArrow" to="." method="_on_chip_left_arrow_button_up"]
+[connection signal="button_up" from="chipRightArrow" to="." method="_on_chip_right_arrow_button_up"]
+[connection signal="pressed" from="socksLeftArrow" to="." method="_on_socks_left_arrow_pressed"]
+[connection signal="button_up" from="socksRightArrow" to="." method="_on_socks_right_arrow_button_up"]
+[connection signal="button_up" from="skunkLeftArrow" to="." method="_on_skunk_left_arrow_button_up"]
+[connection signal="button_up" from="skunkRightArrow" to="." method="_on_skunk_right_arrow_button_up"]
+[connection signal="button_up" from="androLeftArrow" to="." method="_on_andro_left_arrow_button_up"]
+[connection signal="button_up" from="androRightArrow" to="." method="_on_andro_right_arrow_button_up"]

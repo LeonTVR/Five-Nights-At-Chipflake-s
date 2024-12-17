@@ -1,0 +1,683 @@
+extends Node2D
+
+# To be clear, it didn't let me name it static so there was only one option. I deeply apologize. Not really.
+
+@export var darkness : Node
+@export var office : Node
+@export var penis : VideoStreamPlayer
+@export var border : Node
+@export var timeLabel : Label
+@export var cameraLayout : Node
+@export var cameraView : Sprite2D
+@export var cameraButtons : Node
+@export var penisTwo : Node
+@export var chipJumpscareSound : AudioStreamPlayer2D
+@export var jumpscareChip : Node
+@export var cameraTextNode : Node
+@export var message : AudioStreamPlayer2D
+@export var messageMuted : AudioStreamPlayer2D
+@export var muteMessage : Node
+@export var cerealStation : Node
+@export var cerealButton : Node
+@export var cameraButton : Node
+@export var cereal : Node
+@export var milk : Node
+@export var bowlEmpty : Node
+@export var bowlCereal : Node
+@export var bowlCum : Node
+@export var bowlBoth : Node
+@export var cerealPour : Node
+@export var milkPour : Node
+@export var milkCrime : AudioStreamPlayer2D
+@export var clickMe : Node
+@export var cerealTimerLabel : Label
+@export var bowlTimer : Node
+@export var cerealTimer2 : Timer
+@export var soggyCereal : Node
+@export var placeCereal : Node
+@export var cerealEatenNormal : AudioStreamPlayer2D
+@export var cerealEatenSoggy : AudioStreamPlayer2D
+@export var yay : AudioStreamPlayer2D
+@export var winText : Node
+@export var cameraFlip : AudioStreamPlayer2D
+@export var characterMove : AudioStreamPlayer2D
+@export var cerealAmountLabel : Label
+
+var officeX = 960;
+var mouseX;
+var mouseY;
+
+var waiting = false;
+
+var cameraUp = false;
+
+var fadedIn = false;
+
+var mouseOnCameraButton = false;
+
+var canFlipCamera = true;
+
+var time = 0;
+
+var chipRandom;
+var socksRandom;
+var skunkRandom;
+var androRandom;
+
+var chipLevel = 5;
+var socksLevel = 0;
+var skunkLevel = 0;
+var androLevel = 0;
+
+var chipCamera = 1;
+var socksCamera = 1;
+var skunkCamera = 1;
+var androCamera = 1;
+
+var chipGodMode = false;
+
+var inJumpscare = false;
+
+var makingCereal = false;
+
+var canMakeCereal = true;
+
+var cerealDragging = false;
+var milkDragging = false;
+
+var bowlState = 0;
+
+# 0 = Empty, 1 = Cereal, 2 = Milk, 3 = Both
+
+var hasCereal = false;
+var cerealSoggy = false;
+
+var winStarted = false;
+
+var cerealCounting = false;
+
+var cerealAmount = 10;
+
+var placeCerealVisibilitySet = false;
+
+var cerealTimer = 10;
+
+var muteButtonClicked = false;
+
+var androEmpty = preload("res://Assets/Sprites/Cameras/androRoom/androEmpty.png");
+var androStageFour = preload("res://Assets/Sprites/Cameras/androRoom/androStageFour.png");
+var androStageOne = preload("res://Assets/Sprites/Cameras/androRoom/androStageOne.png");
+var androStageThree = preload("res://Assets/Sprites/Cameras/androRoom/androStageThree.png");
+var androStageTwo = preload("res://Assets/Sprites/Cameras/androRoom/androStageTwo.png");
+
+var bathroomEmpty = preload("res://Assets/Sprites/Cameras/bathrooms/bathroomEmpty.png");
+var bathroomSocks = preload("res://Assets/Sprites/Cameras/bathrooms/bathroomSocks.png");
+
+var eatingRoomBoth = preload("res://Assets/Sprites/Cameras/eatingRoom/eatingRoomBoth.png");
+var eatingRoomChip = preload("res://Assets/Sprites/Cameras/eatingRoom/eatingRoomChip.png");
+var eatingRoomEmpty = preload("res://Assets/Sprites/Cameras/eatingRoom/eatingRoomEmpty.png");
+var eatingRoomSocks = preload("res://Assets/Sprites/Cameras/eatingRoom/eatingRoomSocks.png");
+
+var frontHallwayLowerChip = preload("res://Assets/Sprites/Cameras/hallways/frontHallwayLowerChip.png");
+var frontHallwayLowerEmpty = preload("res://Assets/Sprites/Cameras/hallways/frontHallwayLowerEmpty.png");
+var frontHallwayUpperChip = preload("res://Assets/Sprites/Cameras/hallways/frontHallwayUpperChip.png");
+var frontHallwayUpperEmpty = preload("res://Assets/Sprites/Cameras/hallways/frontHallwayUpperEmpty.png");
+var leftHallwayChipRegular = preload("res://Assets/Sprites/Cameras/hallways/leftHallwayChipRegular.png");
+var leftHallwayChipSoggy = preload("res://Assets/Sprites/Cameras/hallways/leftHallwayChipSoggy.png");
+var leftHallwayChipEmpty = preload("res://Assets/Sprites/Cameras/hallways/leftHallwayEmpty.png");
+var rightHallwayEmpty = preload("res://Assets/Sprites/Cameras/hallways/rightHallwayEmpty.png");
+var rightHallwaySocks = preload("res://Assets/Sprites/Cameras/hallways/rightHallwaySocks.png");
+
+var kitchenEmpty = preload("res://Assets/Sprites/Cameras/kitchen/kitchenEmpty.png");
+var kitchenSocks = preload("res://Assets/Sprites/Cameras/kitchen/kitchenSocks.png");
+
+var partsRoomChip = preload("res://Assets/Sprites/Cameras/partsRoom/partsRoomChip.png");
+var partsRoomEmpty = preload("res://Assets/Sprites/Cameras/partsRoom/partsRoomEmpty.png");
+
+var stageChipGone = preload("res://Assets/Sprites/Cameras/stage/stageChipGone.png");
+var stageEmpty = preload("res://Assets/Sprites/Cameras/stage/stageEmpty.png");
+var stageRegular = preload("res://Assets/Sprites/Cameras/stage/stageRegular.png");
+var stageSocksGone = preload("res://Assets/Sprites/Cameras/stage/stageSocksGone.png");
+
+func win():
+	timeLabel.text = "6:00 AM";
+	
+	chipLevel = 0;
+	socksLevel = 0;
+	skunkLevel = 0;
+	androLevel = 0;
+	
+	fadeOut();
+		
+	await get_tree().create_timer(3).timeout;
+		
+	winText.visible = true;
+		
+	await get_tree().create_timer(1.5).timeout;
+		
+	yay.play();
+		
+	await get_tree().create_timer(4).timeout;
+		
+	get_tree().change_scene_to_file("res://Nights/nightTwoEnter.tscn");
+
+func chipJumpscare():
+	inJumpscare = true;
+	
+	message.volume_db = -80;
+	
+	darkness.modulate.a = 1;
+	
+	penis.stop();
+
+	border.visible = false;
+
+	cameraLayout.visible = false;
+	
+	cameraButtons.visible = false;
+	
+	cameraView.visible = false;
+
+	canFlipCamera = false;
+	
+	jumpscareChip.visible = true;
+	
+	chipJumpscareSound.play();
+	
+	await get_tree().create_timer(2).timeout;
+	
+	chipJumpscareSound.set_volume_db(-100);
+	
+	await get_tree().create_timer(1).timeout;
+	
+	get_tree().change_scene_to_file("res://Nights/nightOneEnter.tscn");
+
+func fadeIn():
+	var tween = create_tween();
+	
+	tween.tween_property(darkness, "modulate:a", 0, 3).from(1);
+
+func fadeOut():
+	var tween2 = create_tween();
+		
+	tween2.tween_property(darkness, "modulate:a", 1, 3).from(0);
+
+func _process(_delta):
+	var camera = penisTwo.get("camera");
+	
+	if makingCereal == false:
+		cerealDragging = false;
+		milkDragging = false;
+	
+	if Input.is_action_pressed("Secret1"):
+		if Input.is_action_pressed("Secret2"):
+			time = 60;
+		if Input.is_action_just_pressed("Secret3"):
+			time = 460;
+
+	if camera == 1:
+		if chipCamera == 1:
+			cameraView.set_texture(stageRegular);
+		elif chipCamera != 1:
+			cameraView.set_texture(stageChipGone);
+		
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+	elif camera == 2:
+		if chipCamera == 2:
+			cameraView.set_texture(eatingRoomChip);
+		elif chipCamera != 2:
+			cameraView.set_texture(eatingRoomEmpty);
+		
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+	elif camera == 3:
+		if chipCamera == 3:
+			cameraView.set_texture(partsRoomChip);
+		elif chipCamera != 3:
+			cameraView.set_texture(partsRoomEmpty);
+		
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+	elif camera == 4:
+		if chipCamera == 4:
+			cameraView.set_texture(frontHallwayUpperChip);
+		elif chipCamera != 4:
+			cameraView.set_texture(frontHallwayUpperEmpty);
+		
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+	elif camera == 5:
+		if chipCamera == 5:
+			cameraView.set_texture(frontHallwayLowerChip);
+		elif chipCamera != 5:
+			cameraView.set_texture(frontHallwayLowerEmpty);
+		
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+	elif camera == 6:
+		if hasCereal == true && cameraUp == true:
+			if placeCerealVisibilitySet == false:
+				placeCereal.visible = true;
+			
+				placeCerealVisibilitySet = true;
+		else:
+			placeCereal.visible = false;
+		
+		if chipCamera == 4.5:
+			if cerealSoggy == true:
+				cameraView.set_texture(leftHallwayChipSoggy);
+			elif cerealSoggy == false:
+				cameraView.set_texture(leftHallwayChipRegular);
+		if chipCamera != 4.5:
+			cameraView.set_texture(leftHallwayChipEmpty);
+	elif camera == 7:
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+		
+		cameraView.set_texture(rightHallwayEmpty);
+	elif camera == 8:
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+		
+		cameraView.set_texture(bathroomEmpty);
+	elif camera == 9:
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+		
+		cameraView.set_texture(kitchenEmpty);
+	elif camera == 0:
+		placeCerealVisibilitySet = false;
+		placeCereal.visible = false;
+		
+		cameraView.set_texture(androEmpty);
+	
+	mouseX = get_global_mouse_position().x;
+	mouseY = get_global_mouse_position().y;
+	
+	if fadedIn == true && cameraUp != true:
+		if mouseX < 641 && officeX < 1920 && inJumpscare == false:
+			officeX += 20;
+		elif mouseX > 1279 && officeX > 0 && inJumpscare == false:
+			officeX -= 20;
+	
+		office.position = Vector2(officeX, 540);
+		
+	if mouseY > 951:
+		mouseOnCameraButton = true;
+		
+		if canFlipCamera == true && inJumpscare == false && makingCereal == false && fadedIn == true:
+			cameraFlip.play();
+			
+			if cameraUp == false:
+				cameraUp = true;
+				
+				penis.play();
+				
+				border.visible = true;
+				
+				cameraLayout.visible = true;
+				
+				cameraButtons.visible = true;
+				
+				cameraView.visible = true;
+				
+				cameraTextNode.visible = true;
+				
+				canFlipCamera = false;
+				
+				cerealButton.visible = false;
+			elif cameraUp == true:
+				cameraUp = false;
+				
+				placeCerealVisibilitySet = false;
+				
+				penis.stop();
+				
+				border.visible = false;
+				
+				cameraLayout.visible = false;
+				
+				cameraButtons.visible = false;
+				
+				cameraView.visible = false;
+				
+				cameraTextNode.visible = false;
+				
+				placeCereal.visible = false;
+				
+				canFlipCamera = false;
+				
+				cerealButton.visible = true;
+	else:
+		canFlipCamera = true;
+
+	if mouseX > 1805:
+		if canMakeCereal == true && inJumpscare == false && cameraUp == false && fadedIn == true:
+			if makingCereal == true && milkDragging == false && cerealDragging == false && bowlState == 0:
+				cerealStation.visible = false;
+				cereal.visible = false;
+				milk.visible = false;
+				bowlEmpty.visible = false;
+				bowlCereal.visible = false;
+				bowlCum.visible = false;
+			
+				makingCereal = false;
+			
+				canMakeCereal = false;
+				
+				cameraButton.visible = true;
+			elif makingCereal == false:
+				cerealStation.visible = true;
+				
+				if cerealAmount != 0:
+					cereal.visible = true;
+					milk.visible = true;
+				
+				bowlEmpty.visible = true;
+			
+				makingCereal = true;
+			
+				canMakeCereal = false;
+				
+				cameraButton.visible = false;
+	else:
+		canMakeCereal = true;
+
+	if milkDragging == true:
+		milk.position = Vector2(mouseX, mouseY);
+	
+	if cerealDragging == true:
+		cereal.position = Vector2(mouseX, mouseY);
+
+func _ready():
+	Engine.max_fps = 60;
+	
+	fadeIn();
+	
+	await get_tree().create_timer(3).timeout;
+	
+	fadedIn = true;
+	
+	message.play();
+	
+	await get_tree().create_timer(77).timeout;
+	
+	message.set_volume_db(-100);
+
+	muteMessage.visible = false;
+
+func _on_timer_timeout():
+	time += 1;
+	
+	if time > 59 && time < 121:
+		timeLabel.text = "1:00 AM";
+	elif time > 119 && time < 181:
+		timeLabel.text = "2:00 AM";
+	elif time > 179 && time < 241:
+		timeLabel.text = "3:00 AM";
+	elif time > 319 && time < 401:
+		timeLabel.text = "4:00 AM";
+	elif time > 400 && time < 461:
+		timeLabel.text = "5:00 AM";
+	
+	if time > 459 && winStarted == false:
+		win();
+		
+		winStarted = true;
+
+func _on_timer_2_timeout():
+	var rng = RandomNumberGenerator.new();
+	
+	rng.seed = mouseX/mouseY+time;
+	
+	chipRandom = rng.randi_range(0, 20);
+	socksRandom = rng.randi_range(0, 20);
+	skunkRandom = rng.randi_range(0, 20);
+	androRandom = rng.randi_range(0, 20);
+
+	if chipRandom < chipLevel || chipRandom == chipLevel || chipGodMode == true:
+		if chipCamera == 1:
+			chipCamera = 2;
+			
+			characterMove.volume_db = 10;
+		elif chipCamera == 2:
+			if chipRandom == chipLevel:
+				chipCamera = 3;
+			else:
+				chipCamera = 4;
+			
+			characterMove.volume_db = 12;
+		elif chipCamera == 3:
+			chipCamera = 2;
+			
+			characterMove.volume_db = 14;
+		elif chipCamera == 4:
+			chipCamera = 5;
+			
+			characterMove.volume_db = 16;
+		elif chipCamera == 5:
+			chipJumpscare();
+		
+		characterMove.play();
+
+func _on_mute_call_button_up():
+	if !muteButtonClicked:
+		muteButtonClicked = true;
+		
+		message.set_volume_db(-100);
+	
+		inJumpscare = true;
+
+		messageMuted.play();
+	
+		await get_tree().create_timer(8).timeout;
+
+		get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn");
+
+func _on_milk_button_button_up():
+	if cerealDragging == false && bowlState != 2 && bowlState != 3 && makingCereal == true && cerealAmount != 0:
+		milkDragging = true;
+
+func _on_cereal_button_button_up():
+	if milkDragging == false && bowlState == 0 && makingCereal == true && hasCereal == false && cerealAmount != 0:
+		cerealDragging = true;
+
+func _on_bowl_area_area_entered(area):
+	if area.name == "cerealArea" && makingCereal == true:
+		print("Cereal entered area.");
+		
+		cereal.visible = false;
+		cerealPour.visible = true;
+		
+		await get_tree().create_timer(2).timeout;
+		
+		if bowlState == 0:
+			bowlEmpty.visible = false;
+			bowlCereal.visible = true;
+		
+			bowlState = 1;
+			
+			print("Bowl state is 1");
+		
+		cerealPour.visible = false;
+		
+		cerealDragging = false;
+		
+		cereal.position = Vector2(1055, 536);
+		cereal.visible = true;
+	if area.name == "milkArea" && makingCereal == true && waiting == false:
+		waiting = true;
+		
+		print("Milk in area");
+		
+		milk.visible = false;
+		milkPour.visible = true;
+		
+		await get_tree().create_timer(2).timeout;
+
+		waiting = false;
+
+		if bowlState == 1 && makingCereal == true:
+			bowlCereal.visible = false;
+			bowlBoth.visible = true;
+		
+			bowlState = 3;
+			
+			print("Bowl state is 3");
+		
+			milkPour.visible = false;
+		
+			milkDragging = false;
+			cerealDragging = false;
+		
+			milk.position = Vector2(1290, 536);
+			milk.visible = true;
+			
+			clickMe.visible = true;
+		elif bowlState == 0 && makingCereal == true && waiting == false:
+			waiting = true;
+			
+			bowlEmpty.visible = false;
+			bowlCum.visible = true;
+		
+			print("Bowl state is 2");
+		
+			bowlState = 2;
+		
+			milkPour.visible = false;
+		
+			milkDragging = false;
+		
+			milk.position = Vector2(1290, 303);
+			milk.visible = true;
+
+			inJumpscare = true;
+
+			milkCrime.playing = true;
+			message.playing = false;
+			
+			await get_tree().create_timer(6).timeout;
+			
+			chipJumpscare();
+
+			waiting = false;
+
+func _on_cereal_done_button_button_up():
+	if bowlState == 3:
+		print("Cereal done button up");
+		
+		cerealAmount -= 1;
+		
+		cerealAmountLabel.text = "You have " + str(cerealAmount) + " cereal.";
+		
+		hasCereal = true;
+	
+		bowlState = 0;
+
+		bowlBoth.visible = false;
+		bowlEmpty.visible = true;
+		clickMe.visible = false; 
+	
+		bowlTimer.visible = true;
+		cerealTimerLabel.visible = true;
+	
+		cerealTimer = 10;
+	
+		cerealCounting = true;
+	
+		cerealTimer2.start();
+	
+func _on_cereal_timer_timeout():
+	if cerealCounting == true:
+		if cerealTimer != 0:
+			cerealTimer -= 1;
+		
+			cerealTimerLabel.text = str(cerealTimer);
+		
+		if cerealTimer == 0 && hasCereal == true && waiting == false:
+			waiting = true;
+			
+			cerealTimerLabel.visible = false;
+			bowlTimer.visible = false;
+			
+			cerealSoggy = true;
+		
+			soggyCereal.visible = true;
+			
+			await get_tree().create_timer(3).timeout;
+			
+			soggyCereal.visible = false;
+			
+			cerealCounting = false;
+			
+			waiting = false;
+	else:
+		cerealTimer = 10;
+		
+		cerealTimerLabel.text = str(10);
+
+func _on_place_cereal_button_up():
+	hasCereal = false;
+	
+	bowlTimer.visible = false;
+	cerealTimerLabel.visible = false;
+
+	cerealCounting = false;
+
+	if chipCamera == 5:
+		chipCamera = 4.5;
+		
+		if cerealSoggy == false && waiting == false:
+			waiting = true;
+			
+			cerealEatenNormal.play();
+			
+			await get_tree().create_timer(2.5).timeout;
+			
+			cerealCounting = false;
+			
+			chipCamera = 1;
+			
+			waiting = false;
+		elif cerealSoggy == true && waiting == false:
+			waiting = true;
+			
+			cerealEatenSoggy.play();
+			
+			await get_tree().create_timer(3).timeout;
+			
+			cerealCounting = false;
+			
+			chipJumpscare();
+			
+			waiting = false;
+
+func _on_make_cereal_button_up():
+	if canMakeCereal == true && inJumpscare == false && cameraUp == false && fadedIn == true:
+			if makingCereal == true && milkDragging == false && cerealDragging == false && bowlState == 0:
+				cerealStation.visible = false;
+				cereal.visible = false;
+				milk.visible = false;
+				bowlEmpty.visible = false;
+				bowlCereal.visible = false;
+				bowlCum.visible = false;
+			
+				makingCereal = false;
+			
+				canMakeCereal = false;
+				
+				cameraButton.visible = true;
+			elif makingCereal == false:
+				cerealStation.visible = true;
+				cereal.visible = true;
+				milk.visible = true;
+				bowlEmpty.visible = true;
+			
+				makingCereal = true;
+			
+				canMakeCereal = false;
+				
+				cameraButton.visible = false;
+	else:
+		canMakeCereal = true;

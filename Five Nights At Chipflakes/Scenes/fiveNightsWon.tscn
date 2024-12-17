@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4iim4tooyty"]
+
+[ext_resource type="Script" path="res://Scripts/fiveNightsWon.gd" id="1_qxvh3"]
+[ext_resource type="Texture2D" uid="uid://b5u6vdru5c1vv" path="res://Assets/Sprites/payCheck.png" id="1_v5e0l"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="2_onbgc"]
+[ext_resource type="Texture2D" uid="uid://btnf4256tlriw" path="res://Assets/Sprites/journal.png" id="3_7xdb8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_efrel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7r05"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="FiveNightsWon" type="Node2D" node_paths=PackedStringArray("darkness")]
+script = ExtResource("1_qxvh3")
+darkness = NodePath("fade")
+
+[node name="payCheck" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_efrel")
+position = Vector2(960, 540)
+texture = ExtResource("1_v5e0l")
+
+[node name="Journal" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 659.0
+offset_right = 417.0
+offset_bottom = 1067.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_c7r05")
+icon = ExtResource("3_7xdb8")
+
+[node name="fade" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_onbgc")
+
+[connection signal="button_up" from="Journal" to="." method="_on_journal_button_up"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ajjqrn0hnsm"]
+
+[ext_resource type="Script" path="res://Scripts/newspaper.gd" id="1_8e3wu"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="2_aa87n"]
+[ext_resource type="Texture2D" uid="uid://cbotq5g67vpas" path="res://Assets/Sprites/newspaper.png" id="3_fprm6"]
+
+[node name="Newspaper" type="Node2D"]
+z_index = 1
+z_as_relative = false
+
+[node name="darkness" type="Sprite2D" parent="." node_paths=PackedStringArray("darkness", "newspaper")]
+z_index = 1
+z_as_relative = false
+position = Vector2(960, 540)
+texture = ExtResource("2_aa87n")
+script = ExtResource("1_8e3wu")
+darkness = NodePath(".")
+newspaper = NodePath("../newspaper")
+
+[node name="newspaper" type="Sprite2D" parent="."]
+z_index = -1
+z_as_relative = false
+position = Vector2(960, 540)
+texture = ExtResource("3_fprm6")

@@ -1,0 +1,196 @@
+[gd_scene load_steps=14 format=3 uid="uid://6p7dqx58cjg6"]
+
+[ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_t4xxj"]
+[ext_resource type="Texture2D" uid="uid://c14a87ejn2yrm" path="res://Assets/Sprites/void.png" id="2_b2w74"]
+[ext_resource type="Texture2D" uid="uid://dmr28lww7nho0" path="res://Assets/Sprites/mainMenuChipflake1.png" id="3_gtqtq"]
+[ext_resource type="Texture2D" uid="uid://bv4yy620px6nq" path="res://Assets/Sprites/mainMenuChipflake2.png" id="4_jhjwi"]
+[ext_resource type="FontFile" uid="uid://cldy0swqlx2yc" path="res://Assets/mainFont.ttf" id="5_18mha"]
+[ext_resource type="Texture2D" uid="uid://dtlnarp0k0r8" path="res://Assets/Sprites/star.png" id="6_jqc78"]
+[ext_resource type="VideoStream" path="res://Assets/Animations/static.ogv" id="7_sk15l"]
+[ext_resource type="AudioStream" uid="uid://bqy8j4he5sn30" path="res://Assets/Sound/Music/mainMenuMusic.ogg" id="8_ntk0e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgonm"]
+font = ExtResource("5_18mha")
+font_size = 122
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygtn6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnr45"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr12t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uixq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main Menu" type="Node2D" node_paths=PackedStringArray("goodChip", "badChip", "fade", "music", "continueButton", "starOne", "starTwo", "starThree", "nightSixButton", "nightSixButtonSee", "customNightButton", "customNightButtonSee", "creditsButton")]
+script = ExtResource("1_t4xxj")
+goodChip = NodePath("goodChip")
+badChip = NodePath("badChip")
+fade = NodePath("fade")
+music = NodePath("music")
+continueButton = NodePath("continueButton")
+starOne = NodePath("starOne")
+starTwo = NodePath("starTwo")
+starThree = NodePath("starThree")
+nightSixButton = NodePath("nightSixButton")
+nightSixButtonSee = NodePath("nightSixButton")
+customNightButton = NodePath("customNightButton")
+customNightButtonSee = NodePath("customNightButton")
+creditsButton = NodePath("creditsButton")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_b2w74")
+
+[node name="goodChip" type="Sprite2D" parent="."]
+position = Vector2(1605, 540)
+texture = ExtResource("3_gtqtq")
+
+[node name="badChip" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1605, 540)
+texture = ExtResource("4_jhjwi")
+
+[node name="mainText" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 45.0
+offset_right = 1331.0
+offset_bottom = 432.0
+text = "Five Nights at 
+Chipflakes"
+label_settings = SubResource("LabelSettings_fgonm")
+
+[node name="starOne" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1143.44, 331)
+texture = ExtResource("6_jqc78")
+
+[node name="starTwo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1143.44, 531)
+texture = ExtResource("6_jqc78")
+
+[node name="starThree" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1143.44, 731)
+texture = ExtResource("6_jqc78")
+
+[node name="static" type="VideoStreamPlayer" parent="."]
+modulate = Color(1, 1, 1, 0.294118)
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("7_sk15l")
+volume_db = -80.0
+autoplay = true
+loop = true
+
+[node name="playButton" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 400.0
+offset_right = 488.0
+offset_bottom = 576.0
+theme_override_colors/font_disabled_color = Color(0.431373, 0.431373, 0.431373, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.807843, 0.807843, 0.807843, 1)
+theme_override_colors/font_hover_color = Color(0.823529, 0.823529, 0.823529, 1)
+theme_override_colors/font_pressed_color = Color(0.780392, 0.780392, 0.780392, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_18mha")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxFlat_ygtn6")
+text = "Play"
+
+[node name="continueButton" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 625.0
+offset_right = 480.0
+offset_bottom = 801.0
+theme_override_fonts/font = ExtResource("5_18mha")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_dnr45")
+text = "Continue"
+
+[node name="creditsButton" type="Button" parent="."]
+visible = false
+offset_left = 532.335
+offset_top = 625.0
+offset_right = 967.336
+offset_bottom = 801.0
+theme_override_fonts/font = ExtResource("5_18mha")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_dnr45")
+text = "Credits"
+
+[node name="exitButton" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 850.0
+offset_right = 345.0
+offset_bottom = 1026.0
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("5_18mha")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_pr12t")
+text = "Wimp?"
+
+[node name="nightSixButton" type="Button" parent="."]
+visible = false
+offset_left = 540.0
+offset_top = 402.0
+offset_right = 989.0
+offset_bottom = 577.999
+theme_override_colors/font_disabled_color = Color(0.43134, 0.43134, 0.43134, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.808998, 0.808998, 0.808998, 1)
+theme_override_colors/font_hover_color = Color(0.821789, 0.821789, 0.821789, 1)
+theme_override_colors/font_pressed_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_18mha")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_5uixq")
+text = "Night Six"
+
+[node name="customNightButton" type="Button" parent="."]
+visible = false
+offset_left = 410.0
+offset_top = 850.0
+offset_right = 1047.01
+offset_bottom = 1026.0
+theme_override_colors/font_disabled_color = Color(0.158472, 0.158472, 0.158472, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.176419, 0.176419, 0.176419, 1)
+theme_override_colors/font_hover_color = Color(0.821789, 0.821789, 0.821789, 1)
+theme_override_colors/font_pressed_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_18mha")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxFlat_dnr45")
+text = "Custom Night"
+
+[node name="fade" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_b2w74")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ntk0e")
+volume_db = 11.919
+autoplay = true
+
+[connection signal="button_up" from="playButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="continueButton" to="." method="_on_continue_button_button_up"]
+[connection signal="button_up" from="creditsButton" to="." method="_on_credits_button_button_up"]
+[connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="button_up" from="nightSixButton" to="." method="_on_night_six_button_button_up"]
+[connection signal="button_up" from="customNightButton" to="." method="_on_custom_night_button_button_up"]
